@@ -6,22 +6,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.networkapp.data.NetworkDummyCharacter;
+import com.example.networkapp.model.NetworkListCharacter;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class NetworkListInfo extends Fragment {
 
-    final static String ARG_SRING= "NetWorkList";
+    final static String     NETWORK_LIST_POSITION       = "position";
+    NetworkListCharacter    networkListCharacter;
+    TextView                networkListDesc, netWorkListTitle;
 
-    public static NetworkListInfo newInstance(String text) {
+    public static NetworkListInfo newInstance(int position) {
         Bundle args = new Bundle();
         NetworkListInfo fragment = new NetworkListInfo();
-        args.putString(ARG_SRING, text);
-        fragment.setArguments(args );
+        args.putInt(NETWORK_LIST_POSITION, position);
+        fragment.setArguments(args);
         return fragment;
-
-
     }
 
     @Override
@@ -30,15 +33,21 @@ public class NetworkListInfo extends Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        networkListDesc             = ( (view.findViewById(R.id.network_info_description)));
+        netWorkListTitle            = ( (view.findViewById(R.id.network_info_heading)));
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
         Bundle args = getArguments();
-        if(args != null){
-            updateArticleText(args.getString(ARG_SRING));
+        if (args != null) {
+            int positoin                    = args.getInt(NETWORK_LIST_POSITION);
+            networkListCharacter            = NetworkDummyCharacter.getNetworkActivityPositionCharacter(positoin);
+            networkListDesc.setText("position you clicket is " + positoin + "Heading is ");
+            netWorkListTitle.setText(networkListCharacter.getListHeadingId());
         }
-    }
-
-    private void updateArticleText(String string) {
-
     }
 }

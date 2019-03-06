@@ -2,7 +2,7 @@ package com.example.networkapp;
 
 public interface InteractionsListener {
 
-    void navigateToDetails();
+    void navigateToDetails(int position);
 
     void showDefaultFragment();
 

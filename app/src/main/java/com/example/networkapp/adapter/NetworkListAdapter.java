@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.networkapp.R;
 import com.example.networkapp.model.NetworkListCharacter;
 
@@ -17,24 +16,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class NetworkListAdapter extends ArrayAdapter<NetworkListCharacter> {
-
-
     public NetworkListAdapter(@NonNull Context context, ArrayList<NetworkListCharacter> characters) {
         super(context, 0,characters);
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
+        View listItemView       = convertView;
         if(listItemView == null){
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_network, parent, false);
+            listItemView        = LayoutInflater.from(getContext())
+                                            .inflate(R.layout.list_item_network, parent, false);
         }
-
         NetworkListCharacter networkListCharacter = getItem(position);
 
-        ((ImageView)listItemView.findViewById(R.id.item_network_image)).setImageResource(networkListCharacter.getListImageId());
-        ((TextView)listItemView.findViewById(R.id.item_network_heading)).setText(networkListCharacter.getListHeadingId());
+        ((ImageView)listItemView.findViewById(R.id.item_network_image))
+                                .setImageResource(networkListCharacter.getListImageId());
+        ((TextView)listItemView.findViewById(R.id.item_network_heading))
+                                .setText(networkListCharacter.getListHeadingId());
 
         return listItemView;
     }

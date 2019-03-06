@@ -44,9 +44,9 @@ public class NetworkListInfo extends Fragment {
         super.onStart();
         Bundle args = getArguments();
         if (args != null) {
-            int positoin                    = args.getInt(NETWORK_LIST_POSITION);
-            networkListCharacter            = NetworkDummyCharacter.getNetworkActivityPositionCharacter(positoin);
-            networkListDesc.setText("position you clicket is " + positoin + "Heading is ");
+            int position                    = args.getInt(NETWORK_LIST_POSITION);
+            networkListCharacter            = NetworkDummyCharacter.getNetworkActivityPositionCharacter(position);
+            networkListDesc.setText("position you clicket is " + position + "Heading is ");
             netWorkListTitle.setText(networkListCharacter.getListHeadingId());
         }
     }

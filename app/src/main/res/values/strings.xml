@@ -3,7 +3,7 @@
 
     <string name="demo_string">hello</string>
     <string name="dummyHeading">HEADING 1</string>
-    <string name="dummyHeading1">HEADING 1</string>
-    <string name="dummyHeading2">HEADING 1</string>
-    <string name="dummyHeading3">HEADING 1</string>
+    <string name="dummyHeading1">HEADING 2</string>
+    <string name="dummyHeading2">HEADING 3</string>
+    <string name="dummyHeading3">HEADING 4</string>
 </resources>

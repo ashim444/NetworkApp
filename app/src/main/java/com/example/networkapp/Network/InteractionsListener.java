@@ -1,4 +1,4 @@
-package com.example.networkapp;
+package com.example.networkapp.Network;
 
 public interface InteractionsListener {
 

@@ -11,12 +11,13 @@ import com.example.networkapp.R;
 import com.example.networkapp.model.NetworkListCharacter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class NetworkListAdapter extends ArrayAdapter<NetworkListCharacter> {
-    public NetworkListAdapter(@NonNull Context context, ArrayList<NetworkListCharacter> characters) {
+    public NetworkListAdapter(@NonNull Context context, List<NetworkListCharacter> characters) {
         super(context, 0,characters);
     }
     @NonNull
@@ -29,11 +30,10 @@ public class NetworkListAdapter extends ArrayAdapter<NetworkListCharacter> {
         }
         NetworkListCharacter networkListCharacter = getItem(position);
 
-        ((ImageView)listItemView.findViewById(R.id.item_network_image))
-                                .setImageResource(networkListCharacter.getListImageId());
+        //((ImageView)listItemView.findViewById(R.id.item_network_image))
+          //                      .setImageResource(networkListCharacter.getMission_patch_small());
         ((TextView)listItemView.findViewById(R.id.item_network_heading))
-                                .setText(networkListCharacter.getListHeadingId());
-
+                                .setText(networkListCharacter.getMission_name());
         return listItemView;
     }
 }

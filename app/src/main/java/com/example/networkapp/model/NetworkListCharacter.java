@@ -1,29 +1,25 @@
 package com.example.networkapp.model;
 
+import android.media.Image;
+
 public class NetworkListCharacter {
 
-    private int listImageId;
-    private int listHeadingId;
+    private Image mission_patch_small;
+    private String mission_name;
 
-    public NetworkListCharacter(int listImageId, int listHeadingId) {
-        this.listImageId            = listImageId;
-        this.listHeadingId          = listHeadingId;
+
+    public Image getMission_patch_small() {
+        return mission_patch_small;
     }
 
-    public int getListImageId() {
-        return listImageId;
+    public String getMission_name() {
+        return mission_name;
     }
 
-    public void setListImageId(int listImageId) {
-        this.listImageId = listImageId;
-    }
 
-    public int getListHeadingId() {
-        return listHeadingId;
-    }
+    public NetworkListCharacter(Image mission_patch_small, String mission_name) {
+        this.mission_patch_small = mission_patch_small;
+        this.mission_name = mission_name;
 
-    public void setListHeadingId(int listHeadingId) {
-        this.listHeadingId = listHeadingId;
     }
-
 }

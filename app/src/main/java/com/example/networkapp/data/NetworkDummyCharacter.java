@@ -4,18 +4,14 @@ import com.example.networkapp.R;
 import com.example.networkapp.model.NetworkListCharacter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NetworkDummyCharacter {
 
-    private static final ArrayList<NetworkListCharacter>
-            networkActivityCharacter = new ArrayList<NetworkListCharacter>() {{
-        add(new NetworkListCharacter(R.drawable.ic_launcher_background, R.string.dummyHeading));
-        add(new NetworkListCharacter(R.drawable.ic_launcher_background, R.string.dummyHeading1));
-        add(new NetworkListCharacter(R.drawable.ic_launcher_background, R.string.dummyHeading2));
-        add(new NetworkListCharacter(R.drawable.ic_launcher_background, R.string.dummyHeading3));
-    }};
+    public static List<NetworkListCharacter>
+            networkActivityCharacter ;
 
-    public static ArrayList<NetworkListCharacter> getNetworkActivityCharacter() {
+    public static List<NetworkListCharacter> getNetworkActivityCharacter() {
         return networkActivityCharacter;
     }
 

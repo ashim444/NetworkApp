@@ -1,15 +1,11 @@
-package com.example.networkapp;
+package com.example.networkapp.Network;
 
 import android.os.Bundle;
-import android.util.Log;
 
-import com.example.networkapp.data.NetworkDummyCharacter;
-import com.example.networkapp.model.NetworkListCharacter;
-
-import java.util.ArrayList;
+import com.example.networkapp.R;
+import com.example.networkapp.networking.RestApi;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 public class NetworkActivity extends AppCompatActivity implements InteractionsListener {
 
@@ -17,26 +13,22 @@ public class NetworkActivity extends AppCompatActivity implements InteractionsLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_network);
+        RestApi.getInstance();
         showDefaultFragment();
     }
-
     @Override
     public void navigateToDetails(int position) {
-        NetworkListInfo networkListInfo         = new NetworkListInfo();
-
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.network_fragment_container, NetworkListInfo.newInstance(position)).commit();
+                .replace(R.id.network_fragment_container,
+                        NetworkListInfo.newInstance(position)).commit();
     }
-
     @Override
     public void showDefaultFragment() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.network_fragment_container,
                         NetworkList.newInstance()).commit();
     }
-
     @Override
     public void pop() {
-
     }
 }

@@ -1,4 +1,4 @@
-package com.example.networkapp;
+package com.example.networkapp.Network;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,14 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.networkapp.data.NetworkDummyCharacter;
+import com.example.networkapp.R;
 import com.example.networkapp.model.NetworkListCharacter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class NetworkListInfo extends Fragment {
+public class NetworkListInfo extends Fragment  {
 
     final static String     NETWORK_LIST_POSITION       = "position";
     NetworkListCharacter    networkListCharacter;
@@ -44,10 +44,10 @@ public class NetworkListInfo extends Fragment {
         super.onStart();
         Bundle args = getArguments();
         if (args != null) {
-            int position                    = args.getInt(NETWORK_LIST_POSITION);
-            networkListCharacter            = NetworkDummyCharacter.getNetworkActivityPositionCharacter(position);
+            int position = args.getInt(NETWORK_LIST_POSITION);
+            networkListCharacter =
             networkListDesc.setText("position you clicket is " + position + "Heading is ");
-            netWorkListTitle.setText(networkListCharacter.getListHeadingId());
+            netWorkListTitle.setText(networkListCharacter.getMission_name());
         }
     }
 }

@@ -3,7 +3,7 @@ package com.example.networkapp.Network;
 import android.os.Bundle;
 
 import com.example.networkapp.R;
-import com.example.networkapp.networking.RestApi;
+import com.example.networkapp.networking.RestApiRepository;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +13,6 @@ public class NetworkActivity extends AppCompatActivity implements InteractionsLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_network);
-        RestApi.getInstance();
         showDefaultFragment();
     }
     @Override

@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment;
 public class NetworkListInfo extends Fragment  {
 
     final static String     NETWORK_LIST_POSITION       = "position";
-    NetworkListCharacter    networkListCharacter;
     TextView                networkListDesc, netWorkListTitle;
 
     public static NetworkListInfo newInstance(int position) {
@@ -44,10 +43,8 @@ public class NetworkListInfo extends Fragment  {
         super.onStart();
         Bundle args = getArguments();
         if (args != null) {
-            int position = args.getInt(NETWORK_LIST_POSITION);
-            networkListCharacter =
-            networkListDesc.setText("position you clicket is " + position + "Heading is ");
-            netWorkListTitle.setText(networkListCharacter.getMission_name());
+
+
         }
     }
 }

@@ -1,15 +1,30 @@
 package com.example.networkapp.model;
 
-import android.media.Image;
-
 public class NetworkListCharacter {
 
-    private Image mission_patch_small;
+    //    private Image mission_patch_small;
     private String mission_name;
+    private String lunch_year;
+
+    public String getLunch_year() {
+        return lunch_year;
+    }
 
 
-    public Image getMission_patch_small() {
-        return mission_patch_small;
+    public NetworkListCharacter(String mission_name, String lunch_year) {
+        this.mission_name = mission_name;
+        this.lunch_year = lunch_year;
+    }
+//    public Image getMission_patch_small() {
+//        return mission_patch_small;
+//    }
+
+    public void setMission_name(String mission_name) {
+        this.mission_name = mission_name;
+    }
+
+    public void setLunch_year(String lunch_year) {
+        this.lunch_year = lunch_year;
     }
 
     public String getMission_name() {
@@ -17,9 +32,5 @@ public class NetworkListCharacter {
     }
 
 
-    public NetworkListCharacter(Image mission_patch_small, String mission_name) {
-        this.mission_patch_small = mission_patch_small;
-        this.mission_name = mission_name;
 
-    }
 }
